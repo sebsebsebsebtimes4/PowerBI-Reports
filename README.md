@@ -1,7 +1,7 @@
 # PowerBI-Reports, Model, Measures
 
 ## Business Volume
-![alt text](Business Volume.png)
+![alt text](Business)
 ```
 Dax Measure-
 
