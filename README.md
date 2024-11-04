@@ -3,7 +3,7 @@
 ## Business Volume
 ![alt text](b_volume.png)
 ```
-Dax Measure-
+Dax Measures-
 
 DivSetPlus = 
 var gender = IF(MID(BDSM_DataSource[Style_Code],6,1) = "1","W",IF(MID(BDSM_DataSource[Style_Code],6,1)="2","M"))
