@@ -10,7 +10,7 @@ return IF(BDSM_DataSource[DivSet] = "ACC","ACC "&gender&div,BDSM_DataSource[DivS
 ```
 
 ```
-SQL-
+SQL Script-
 declare @StartIRP as varchar(10)
 set @StartIRP='2022-01'
 
