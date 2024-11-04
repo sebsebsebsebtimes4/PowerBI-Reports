@@ -1,6 +1,6 @@
 # PowerBI-Reports
 
-# PowerBI-Reports
+# Business Volumes
 ```
 declare @StartIRP as varchar(10)
 set @StartIRP='2022-01'
@@ -8,26 +8,21 @@ set @StartIRP='2022-01'
 declare @TY as varchar(10)
 set @TY=year(GETDATE())+1
 
-
-
-SELECT
-	 m.[Purch Doc No] as PO
-	,m.[Style Key] as Style_Code
-        ,concat(m.[Style Key],m.[Color (Coex) Key]) as 'Option'
-	,m.[Ship Win] as ShipWindow
-        ,m.[Act Ship Cond Text]
-        ,m.[Theme ID]
-        ,m.[Cust Spec Mat]
-        ,m.[Rep Vendor Key]
-        ,m.[Rep Vendor Text]
-
-
-    -------Product Mapping--------
-	,m.[Div Set] as Prod_Label
-	,case when m.[Div Set] in ('WCA','EDC','WCO','TRD') then 'Women'
-	when m.[Div Set] in ('MCA','MDC','MCO') then 'Men'
-	when m.[Div Set] ='ACC' then 'ACC'
-	else 'LIFESTYLE' end as Prod_Gender
+SELECT m.[Purch Doc No] as PO
+      ,m.[Style Key] as Style_Code
+      ,concat(m.[Style Key],m.[Color (Coex) Key]) as 'Option'
+      ,m.[Ship Win] as ShipWindow
+      ,m.[Act Ship Cond Text]
+      ,m.[Theme ID]
+      ,m.[Cust Spec Mat]
+      ,m.[Rep Vendor Key]
+      ,m.[Rep Vendor Text]
+-------Product Mapping--------
+      ,m.[Div Set] as Prod_Label
+      ,case when m.[Div Set] in ('WCA','EDC','WCO','TRD') then 'Women'
+            when m.[Div Set] in ('MCA','MDC','MCO') then 'Men'
+	    when m.[Div Set] ='ACC' then 'ACC'
+	    else 'LIFESTYLE' end as Prod_Gender
 	,m.[SupplyCategoryName] as Prod_SupplyCategory
 	,m.[Mat Grp] as Prod_MaterialGroup
 	,m.[Prod Cls Text] as Prod_Cluster_Name
