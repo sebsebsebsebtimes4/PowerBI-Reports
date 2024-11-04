@@ -1,7 +1,7 @@
 # PowerBI-Reports
 
 # PowerBI-Reports
-´´´
+```
 declare @StartIRP as varchar(10)
 set @StartIRP='2022-01'
 
@@ -104,6 +104,4 @@ FROM [BSMD_Data].[Rep].[BSMD_AllData] as m
 
 where 
 concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
-
-
-´´´
+```
