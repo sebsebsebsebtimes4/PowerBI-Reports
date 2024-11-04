@@ -2,11 +2,19 @@
 
 # Business Volume
 ```
-Dax Measure- 
+Dax Measure-
+
 DivSetPlus = 
 var gender = IF(MID(BDSM_DataSource[Style_Code],6,1) = "1","W",IF(MID(BDSM_DataSource[Style_Code],6,1)="2","M"))
 var div = IF(MID(BDSM_DataSource[Style_Code],4,1) = "C","DC",IF(MID(BDSM_DataSource[Style_Code],4,1) ="E","CA"))
 return IF(BDSM_DataSource[DivSet] = "ACC","ACC "&gender&div,BDSM_DataSource[DivSet])
+
+Shoe_Gender = SWITCH(MID(BDSM_DataSource[Style_Code],4,3),
+                         "EK1","Woman",
+                         "EK2","Men",
+                         "EKK","Kids", 
+                         "Other")
+
 ```
 
 ```
