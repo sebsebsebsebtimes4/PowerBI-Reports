@@ -1,10 +1,16 @@
 # PowerBI-Reports, Model, Measures
 
 # Business Volume
-
+```
+Dax Measure- 
+DivSetPlus = 
+var gender = IF(MID(BDSM_DataSource[Style_Code],6,1) = "1","W",IF(MID(BDSM_DataSource[Style_Code],6,1)="2","M"))
+var div = IF(MID(BDSM_DataSource[Style_Code],4,1) = "C","DC",IF(MID(BDSM_DataSource[Style_Code],4,1) ="E","CA"))
+return IF(BDSM_DataSource[DivSet] = "ACC","ACC "&gender&div,BDSM_DataSource[DivSet])
 ```
 
 ```
+SQL-
 declare @StartIRP as varchar(10)
 set @StartIRP='2022-01'
 
