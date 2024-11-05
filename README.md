@@ -51,6 +51,15 @@ NewVendor_Name = SWITCH(TRUE(),
                         'Primary Vendor Key'[NewVendor_Name1]
       )
 
+---
+Commercial Business Management Performance = IF('Summary Commercial Table'[Score] > 7,"1.Excellent",
+                                             IF('Summary Commercial Table'[Score] > 5,"2.Above Average",
+                                             IF('Summary Commercial Table'[Score] > 3,"3.Average",                                                
+                                             IF('Summary Commercial Table'[Score] > 1,"4.Need Improvement","5.Unacceptable"))))
+
+---
+
+
 
 
 
