@@ -57,15 +57,7 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
                                              IF('Summary Commercial Table'[Score] > 3,"3.Average",                                                
                                              IF('Summary Commercial Table'[Score] > 1,"4.Need Improvement","5.Unacceptable"))))
 
----
-
-
-
-
-
-
 ```
-
 
 ## Business Volume
 ![alt text](b_volume.png)
