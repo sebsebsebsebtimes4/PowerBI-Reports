@@ -12,23 +12,25 @@ Rank 2 = RANKX(
                ,[#Score SS 2022],,DESC
 	       )
 
+---
 Logistic and Delivery Performance POF Score AW2021 = 
 var period="SS 2022"
 return 
 CALCULATE(sum('POF Main'[Score]),FILTER('POF Main','POF Main'[Period]=period),FILTER('POF Main','POF Main'[KPI Category]="Logistics and Delivery Performance"))
 
-
+---
 POF Score SS2021 Ratio = 
 var period="SS 2021"
 return 
 CALCULATE(sum('POF Main'[Score])/60,FILTER('POF Main','POF Main'[Period]=period))
 
+---
 POF Format = 
 CALCULATE(SUM('POF Main'[POF Conditional Format]),
           FILTER('POF Main','POF Main'[Period]="SS 2022")
          )
 
-
+---
 Rankx = 
 CALCULATE(
         DISTINCTCOUNT('POF Main'[Index]),
@@ -37,11 +39,12 @@ CALCULATE(
         'POF Main'[Vendor Code]=EARLIER('POF Main'[Vendor Code]) && 'POF Main'[Period] = "SS 2022"&&
         'POF Main'[Index]>EARLIER('POF Main'[Index])))+1
 
+---
 POF History AW 2021 = 
 var Score = CALCULATE(SUM('POF Score History'[POF Score]),FILTER('POF Score History','POF Score History'[Period] = "AW 2021"))
 return IF(Score = BLANK(),"",Score)
 
-
+---
 NewVendor_Name = SWITCH(TRUE(),
                         'Primary Vendor Key'[Vendor] = "505107","Kipas Pazarlama Ve Ticaret A.S.",
                         'Primary Vendor Key'[Vendor] = "506095","Winpro Enterprises Co. Ltd.",
