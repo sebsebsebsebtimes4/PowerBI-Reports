@@ -2,7 +2,7 @@
 
 ## Vendor Score Card - Summary Report
 
-
+![alt text](vsc.png)
 
 ```
 Dax Measures-
