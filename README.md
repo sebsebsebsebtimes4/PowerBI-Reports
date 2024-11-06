@@ -61,6 +61,16 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
 ## Clearance Stock Report with Images Data
 ![alt text](clearance.png)
 
+```
+Dax Measures-
+
+B-Shop Discount% = SWITCH('MainLine Style'[Mainline Discount.B-Shop Discount Flag],"NO INFO"
+                          ,BLANK(),'MainLine Style'[Mainline Discount.DiscountPecentage]
+                         )
+
+---
+
+
 
 
 
