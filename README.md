@@ -221,9 +221,40 @@ concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
 ```
 Dax Measures-
 
+Div Plus = 
+var gender = IF(MID('APLL Sample'[Material #],6,1) = "1","W",IF(MID('APLL Sample'[Material #],6,1)="2","M"))
+var div = IF(MID('APLL Sample'[Material #],4,1) = "C","DC",IF(MID('APLL Sample'[Material #],4,1) ="E","CA"))
+return IF('APLL Sample'[Label] = "ACC","ACC "&gender&div,'APLL Sample'[Label])
 
+---
+Gender_Slicer = SWITCH('APLL Sample'[Label],
+                       "WCA","Women",
+                       "WCO","Women",
+                       "EDC","Women",
+                       "MCA","Men",
+                       "MCO","Men",
+                       "MDC","Men",
+                       "ACC"
+                      )
 
+---
+In_time = if('APLL Sample'[In_transit]="In Transit","",
+          if(and('APLL Sample'[Initial Conf Handover Dt (Conf ZG)]='APLL Sample'[Estimated Ex-Factory Date (rev ZG) SKU],'APLL Sample'[In_transit]=""),"In Time","")
+)
+
+---
+Style_option_Ratio = 
+var style=DISTINCTCOUNT('APLL Sample'[Material #])
+var option=DISTINCTCOUNT('APLL Sample'[Option])
+return
+option/style
+
+---
+Supplier_Performance = 
+var crd=DATEDIFF('APLL Sample'[Initial Conf Handover Dt (Conf ZG)],'APLL Sample'[Estimated Ex-Factory Date (rev ZG) SKU],DAY)
+return if(crd<0,"On time",if(crd=0,"On time", if(crd<=3,"0-3ds", if(crd<=7,"4-7ds",">7day"))))
 ```
+
 ```
 SQL Script-
 
