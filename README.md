@@ -68,13 +68,60 @@ B-Shop Discount% = SWITCH('MainLine Style'[Mainline Discount.B-Shop Discount Fla
                          )
 
 ```
+```
+SQL Script-
+
+SELECT m.Style 
+      ,[Color]
+      ,CONCAT ([Size],[Length]) as 'Size'
+      ,[EAN11] AS 'EAN'
+      ,[WholesaleSellingPrice eV LC] as 'WSP EUR'
+      ,[PRI(UPRiV)lc] as 'UPR EUR'
+      ,[StockQuantity] As 'Stock Unit'
+      ,left(m.Style,2) as 'Season'
+      ,[Description] as 'ProductClass'
+      ,d.[DivisionSet]
+      ,[SeasonYear]
+
+FROM [Staging].[SupplyChain].[ATPStock] as m
+left join (
+SELECT [Style]
+      ,[PRI(UPRiV)lc]
+FROM [Reporting].[MasterDataViews].[Prices_Style_Country_Currency_UPR_current_OBSOLETE]
+where Country = 'DE' and LocalCurrency = 'EUR'
+) as s
+on m.Style = s.Style
+ 
+left join (
+SELECT [style]
+      ,[WholesaleSellingPrice eV LC]
+FROM [Reporting].[WholesaleViews].[PriceWholesalePriceCountryStyle]
+where Country = 'DE' and Currency = 'EUR' and ValidTo = '9999-12-31'
+) as w 
+on m.Style = w.[style]
+
+left join [DataLake].[master].[style] as d
+on m.Style =d.Style
+
+left join [DataLake].[AFS].[ProductClass] as p
+on d.ProductClass = p.ProductClass
+
+left join [Reporting].[MasterDataViews].[ProductStyle] as f
+on m.Style = f.Style
+
+where (left(m.Style,3) not in ('032','022','012','121','111','101')) and (LEFT(m.Style,2) not in ('99'))
 
 
+---
+SELECT distinct([Style]) as 'Style'
+      ,min([Color]) as 'Color' 
+      ,min([NOOSEndSeason]) as 'NOOSEndSeason' 
+      ,min([NOOSStartSeason]) as 'NOOSStartSeason'
 
-
-
-
-
+FROM [Reporting].[MasterDataViews].[ProductArticle]
+where LEFT(Style,2) in ('99') and NOOSEndSeason is not NULL and NOOSEndSeason not in ('')
+group by [Style],[Color],[NOOSEndSeason],[NOOSStartSeason]
+```
 
 ## Business Volume
 ![alt text](b_volume.png)
