@@ -217,7 +217,7 @@ where
 concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
 ```
 ## Sample Management Report
-![alt text](b_volume.png)
+![alt text](sample.png)
 ```
 Dax Measures-
 
