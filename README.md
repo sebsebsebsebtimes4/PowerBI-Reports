@@ -224,3 +224,38 @@ Dax Measures-
 
 
 ```
+```
+SQL Script-
+
+SELECT distinct [Style]
+      ,case when [TargetGroup]= '1' then 'W'
+	    when [TargetGroup]= '2' then 'M'
+	    else 'LS'
+            end as Gender
+      ,left([ORIGINAL_SEASON_NOMINAL_DATE],6) as Season
+      ,m.[MaterialGroup]
+      ,sc.[Description] as [SupplyCategory]
+      ,div.[OldDivisionSet] as DivisionSet
+      ,class.[Description] as ProductClass
+
+FROM [DataLake].[master].[style] as m
+left join afs.ProductClass as class on class.ProductClass=m.ProductClass
+left join [DataLake].[AFS].[DivisionSet] as div on div.[ProductHierarchy]= m.[MerchandiseHierarchy5] 
+left join [DataLake].[AFS].[SupplyCategory] as sc on sc.[SupplyCategory]=class.[SupplyCategoryId]
+
+where sc.[Description]  <>'' and div.[OldDivisionSet] not in ('SHO') and ((left(Style,3) in ('074','084','094','104'))or(left(Style,2) in ('99')))
+
+---
+SELECT [Style]
+      ,sum([PUR(PCS)]) as ttlpcs
+      ,sum([PUR(FOB)]) as ttlfob
+      ,round(sum([PUR(FOB)])/sum([PUR(PCS)]),4) as FOB_PCS
+
+FROM [Reporting].[SupplyChainViews].[PurchasingOrderConfirmationShipment]
+Where Plant = 'DE02' and PurchasingDocumentType = 'ZSAO' and ((left(Style,3) in ('074','084','094','104'))or(left(Style,2) in ('99'))) 
+group by Style
+order by Style
+
+```
+
+
