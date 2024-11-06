@@ -59,7 +59,7 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
 
 ```
 ## Clearance Stock Report with Images Data
-![alt text](vsc.png)
+![alt text](clearance.png)
 
 
 
