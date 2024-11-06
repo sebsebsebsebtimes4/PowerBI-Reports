@@ -216,3 +216,11 @@ FROM [BSMD_Data].[Rep].[BSMD_AllData] as m
 where 
 concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
 ```
+## Sample Management Report
+![alt text](b_volume.png)
+```
+Dax Measures-
+
+
+
+```
