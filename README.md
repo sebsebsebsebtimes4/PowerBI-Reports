@@ -75,7 +75,7 @@ Clearance stock report is providing information of the leftover stock for wholes
 -
 ![alt text](clearance.png)
 -
-Some dax measure used in the report.
+Some dax measures used in the report.
 ```
 Dax Measures-
 
@@ -141,7 +141,12 @@ group by [Style],[Color],[NOOSEndSeason],[NOOSStartSeason]
 ```
 
 ## Business Volume
+Business Volume report summaries all the information after sourcing team placed the order.
+-
 ![alt text](b_volume.png)
+-
+some measures used in the report. 
+
 ```
 Dax Measures-
 
@@ -158,6 +163,7 @@ Shoe_Gender = SWITCH(MID(BDSM_DataSource[Style_Code],4,3),
 
 ```
 
+SQL script used for the data source.
 ```
 SQL Script-
 declare @StartIRP as varchar(10)
