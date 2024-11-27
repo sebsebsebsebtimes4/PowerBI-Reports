@@ -72,9 +72,10 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
 ```
 ## Clearance Stock Report with Images Data
 Clearance stock report is providing information of the leftover stock for wholesale merchandise management. Combining images with stock information let the merchandise managers decide which options to be sent to the business partners.
-
+-
 ![alt text](clearance.png)
-
+-
+Some dax measure used in the report.
 ```
 Dax Measures-
 
@@ -83,6 +84,7 @@ B-Shop Discount% = SWITCH('MainLine Style'[Mainline Discount.B-Shop Discount Fla
                          )
 
 ```
+the SQL script behind the data source.
 ```
 SQL Script-
 
@@ -126,7 +128,7 @@ on m.Style = f.Style
 
 where (left(m.Style,3) not in ('032','022','012','121','111','101')) and (LEFT(m.Style,2) not in ('99'))
 
-
+SQL script for the seasonality for product.
 ---
 SELECT distinct([Style]) as 'Style'
       ,min([Color]) as 'Color' 
