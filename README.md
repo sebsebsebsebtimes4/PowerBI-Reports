@@ -17,7 +17,7 @@ The data model behind the file.
 
 ![alt text](vsc4.png)
 
-
+Some useful dax measures.
 ```
 Dax Measures-
 
