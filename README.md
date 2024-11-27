@@ -15,6 +15,8 @@ Users just need to search the vendor name then other information will updated ac
 
 The data model behind the file.
 
+![alt text](vsc4.png)
+
 
 ```
 Dax Measures-
