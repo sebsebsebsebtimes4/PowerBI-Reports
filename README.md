@@ -2,6 +2,7 @@
 
 ## Vendor Score Card
 Vendor Score card is an index to provide information of vendors ranking. It conbines different data source then calculated the scores for different departments. 
+Users just need to search the vendor name then other information will updated across the tabs.
 
 
 ```
