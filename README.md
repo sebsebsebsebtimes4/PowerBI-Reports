@@ -1,8 +1,8 @@
 # PowerBI-Reports, Model, Measures
 
-## Vendor Score Card - Summary Report
+## Vendor Score Card
+Vendor Score card is an index to provide information of vendors ranking. It conbines different data source then calculated the scores for different departments. 
 
-![alt text](vsc.png)
 
 ```
 Dax Measures-
