@@ -7,16 +7,14 @@ Users just need to search the vendor name then other information will updated ac
 
 ![alt text](vsc1.png)
 -
-
-
 ![alt text](vsc2.png)
 -
 ![alt text](vsc3.png)
-
+-
 The data model behind the file.
-
+-
 ![alt text](vsc4.png)
-
+-
 Some useful dax measures.
 ```
 Dax Measures-
