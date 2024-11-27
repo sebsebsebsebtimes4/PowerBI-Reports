@@ -1,8 +1,8 @@
 # PowerBI-Reports, Model, Measures
 
 ## Vendor Score Card
-Vendor Score card is an index to provide information of vendors ranking. It conbines different data source then calculated the scores for different departments. 
-Users just need to search the vendor name then other information will updated across the tabs.
+Vendor Score card is an index to provide information of vendors ranking for our sourcing team. It combines different data source then calculated the scores for different departments. 
+Users just need to search the vendor name then other information will updated and calculate across the tabs.
 -   
 
 ![alt text](vsc1.png)
@@ -71,7 +71,10 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
 
 ```
 ## Clearance Stock Report with Images Data
+Clearance stock report is providing information of the leftover stock for wholesale merchandise management. Combining images with stock information let the merchandise managers decide which options to be sent to the business partners.
+
 ![alt text](clearance.png)
+
 ```
 Dax Measures-
 
