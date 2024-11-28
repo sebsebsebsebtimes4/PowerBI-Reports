@@ -1,8 +1,8 @@
 # PowerBI-Reports, Model, Measures
 
 ## Vendor Score Card
-Vendor Score card is an index to provide information of vendors ranking for our sourcing team. It combines different data source then calculated the scores for different departments. 
-Users just need to search the vendor name then other information will updated and calculate across the tabs.
+The Vendor Score Card is an index that provides information on vendor rankings for our sourcing team. It combines different data sources and calculates scores for various departments.
+Users only need to search for the vendor name, and the other information will be updated and calculated across the tabs.
 -   
 
 ![alt text](vsc1.png)
@@ -71,7 +71,7 @@ Commercial Business Management Performance = IF('Summary Commercial Table'[Score
 
 ```
 ## Clearance Stock Report with Images Data
-Clearance stock report is providing information of the leftover stock for wholesale merchandise management. Combining images with stock information let the merchandise managers decide which options to be sent to the business partners.
+The Clearance Stock Report provides information on leftover stock for wholesale merchandise management. By combining images with stock information, merchandise managers can decide which options to send to business partners.
 -
 ![alt text](clearance.png)
 -
@@ -141,7 +141,7 @@ group by [Style],[Color],[NOOSEndSeason],[NOOSStartSeason]
 ```
 
 ## Business Volume
-Business Volume report summaries all the information after sourcing team placed the order.
+Business Volume Report summarizes all the information after the sourcing team places the order.
 -
 ![alt text](b_volume.png)
 -
@@ -240,7 +240,7 @@ where
 concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
 ```
 ## Sample Management Report
-After the buyers place the sample orders, the sample management report provides information of ordering quantity and arriving time.
+After the buyers place the sample orders, the Sample Management Report provides information on the order quantity and arrival time.
 -
 ![alt text](sample.png)
 ```
