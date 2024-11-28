@@ -319,5 +319,5 @@ For colleagues who do not use BI tools, collecting data models using Excel pivot
 ![alt text](modelusage.png)
 -
 
-[-----](https://sebsebsebsebtimes4.github.io/Python/)
+[Using Python to connect with PowerBI Semantic Data Model](https://sebsebsebsebtimes4.github.io/Python-for-BI-Semantic-Data-Model-Connector/)
 
