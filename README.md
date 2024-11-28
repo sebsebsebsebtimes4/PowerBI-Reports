@@ -318,6 +318,8 @@ For colleagues who do not use BI tools, collecting data models using Excel pivot
 -
 ![alt text](modelusage.png)
 -
+Apart from BI & Excel, the data model can also be extracted via a Python connector and analyzed in Python using Pandas.
+Please refer to the script using the link below.
 
 [Using Python to connect with PowerBI Semantic Data Model](https://sebsebsebsebtimes4.github.io/Python-for-BI-Semantic-Data-Model-Connector/)
 
