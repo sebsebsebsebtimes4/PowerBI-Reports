@@ -240,6 +240,8 @@ where
 concat(right(m.[IRP CalYMth],4),'-',left(m.[IRP CalYMth],2)) >= @StartIRP
 ```
 ## Sample Management Report
+After the buyers place the sample orders, the sample management report provides information of ordering quantity and arriving time.
+-
 ![alt text](sample.png)
 ```
 Dax Measures-
@@ -309,7 +311,9 @@ FROM [Reporting].[SupplyChainViews].[PurchasingOrderConfirmationShipment]
 Where Plant = 'DE02' and PurchasingDocumentType = 'ZSAO' and ((left(Style,3) in ('074','084','094','104'))or(left(Style,2) in ('99'))) 
 group by Style
 order by Style
-
 ```
+## Data Model Usage
+After publishing the models to PBI workspace, all users can access to the data model via PBI desktop or excel pivot tables.
+
 
 
