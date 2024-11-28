@@ -314,6 +314,10 @@ order by Style
 ```
 ## Data Model Usage
 After publishing the models to PBI workspace, all users can access to the data model via PBI desktop or excel pivot tables.
+For colleagues who do not use BI tools, collecting data models using Excel pivot tables provides a flexible workaround.
+-
+![alt text](modelusage.png)
+-
 
 
 
